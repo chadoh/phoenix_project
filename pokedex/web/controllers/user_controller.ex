@@ -40,5 +40,4 @@ defmodule Pokedex.UserController do
       |> halt()
     end
   end
-
 end
