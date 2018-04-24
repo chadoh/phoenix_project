@@ -1,6 +1,6 @@
 defmodule Pokedex.User do
   use Pokedex.Web, :model
-  import Comeonin.Bcrypt, only: [ checkpw: 2, dummy_checkpw: 0 ]
+  # import Comeonin.Bcrypt, only: [ checkpw: 2, dummy_checkpw: 0 ]
 
   schema "users" do
     field :name, :string
