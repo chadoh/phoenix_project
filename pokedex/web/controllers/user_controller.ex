@@ -9,10 +9,10 @@ defmodule Pokedex.UserController do
     render conn, "new.html", changeset: changeset
   end
 
-  # def index(conn, _params) do
-  #   users = Repo.all(Pokedex.User)
-  #   render conn, "index.html", users: users
-  # end
+  def index(conn, _params) do
+    users = Repo.all(Pokedex.User)
+    render conn, "index.html", users: users
+  end
 
   def show(conn, %{"id" => id}) do
     user = Repo.get(Pokedex.User, id)
