@@ -13,6 +13,7 @@
 alias Pokedex.Ability
 alias Pokedex.Repo
 alias Pokedex.Type
+alias Pokedex.Pokemon
 
 # defmodule Pokedex.Seeds do
 
@@ -57,9 +58,23 @@ end)
 
 # Seeds pokemon table
 
-# File.stream!("/Users/smdahlgren171/Code/Semester Two/phoenix_project/pokedex/priv/repo/dex.csv")
-# |> CSV.decode(headers: true)
-# |> Enum.each( fn %{ "name" => name}  ->
-#   Repo.get_by(Pokemon, name: name) ||
-#   Repo.insert!(%Pokemon{name: name})
-# end)
+File.stream!("/Users/smdahlgren171/Code/Semester Two/phoenix_project/pokedex/priv/repo/dex.csv")
+|> CSV.decode(headers: true)
+|> Enum.each( fn %{ "name" => name}  ->
+  Repo.get_by(Pokemon, name: name) ||
+  Repo.insert!(%Pokemon{name: name})
+end)
+
+# create table(:pokemon_full) do
+#   add :name, :string
+#   add :type1, :string
+#   add :type2, :string
+#   add :ability1, :string
+#   add :ability2, :string
+#   add :hidden_ability, :string
+#
+#   # has_many :abilities
+#   # has_many :types
+#
+#   timestamps()
+# end
