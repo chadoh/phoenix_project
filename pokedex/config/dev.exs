@@ -36,8 +36,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :pokedex, Pokedex.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "smdahlgren171",
-  password: "Stan2413",
+  username: "postgres",
+  password: "postgres",
   database: "pokedex_dev",
   hostname: "localhost",
   pool_size: 10
