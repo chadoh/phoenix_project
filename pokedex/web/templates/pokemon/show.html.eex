@@ -1,0 +1,10 @@
+<h2>Show pokemon</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @pokemon.name %>
+  </li>
+
+</ul>

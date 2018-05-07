@@ -9,10 +9,18 @@
 
   <title>Hello Pokedex!</title>
   <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+
+  <style>
+  .navbar-brand{
+    margin-top: -5px;
+  }
+  </style>
+
 </head>
 
 <body>
   <div class="container">
+    <div class="navbar-brand">Choadis' Phoenix-Dex</div>
     <div class="header">
       <ol class="breadcrumb text-right">
       <%= if @current_user do %>
@@ -28,7 +36,6 @@
   </ol>
   <span class="logo"></span>
 </div>
-
 <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
 <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 
