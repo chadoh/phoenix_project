@@ -2,7 +2,8 @@ defmodule Pokedex.Type do
   use Pokedex.Web, :model
 
   schema "types" do
-    field :name, :string
+    field :name, :string, null: false
+    field :type, :string
 
     # belongs_to :pokemon
 

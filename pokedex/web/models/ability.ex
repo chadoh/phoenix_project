@@ -2,7 +2,8 @@ defmodule Pokedex.Ability do
   use Pokedex.Web, :model
 
   schema "abilities" do
-    field :name, :string
+    field :name, :string, null: false
+    field :ability, :string
 
     # belongs_to :pokemon
 

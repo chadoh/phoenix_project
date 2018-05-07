@@ -13,45 +13,52 @@
 alias Pokedex.Ability
 alias Pokedex.Repo
 alias Pokedex.Type
-alias Pokedex.Pokemon
 
 # Seeds abilities table
 
 File.stream!("/Users/smdahlgren171/Code/Semester Two/phoenix_project/pokedex/priv/repo/dex.csv")
 |> CSV.decode(headers: true)
-|> Enum.each( fn %{ "ability1" => ability}  ->
+|> Enum.each( fn %{ "name" => name, "ability1" => ability}  ->
+  # IO.inspect(x)
+  # IO.inspect(%Ability{})
   Repo.get_by(Ability, name: ability) ||
-  Repo.insert!(%Ability{name: ability})
+  Repo.insert!(%Ability{name: name, ability: ability})
 end)
 
 File.stream!("/Users/smdahlgren171/Code/Semester Two/phoenix_project/pokedex/priv/repo/dex.csv")
 |> CSV.decode(headers: true)
-|> Enum.each( fn %{ "ability2" => ability}  ->
+|> Enum.each( fn %{ "name" => name, "ability2" => ability}  ->
+  # IO.inspect(x)
+  # IO.inspect(%Ability{})
   Repo.get_by(Ability, name: ability) ||
-  Repo.insert!(%Ability{name: ability})
+  Repo.insert!(%Ability{name: name, ability: ability})
 end)
-
+#
 File.stream!("/Users/smdahlgren171/Code/Semester Two/phoenix_project/pokedex/priv/repo/dex.csv")
 |> CSV.decode(headers: true)
-|> Enum.each( fn %{ "hidden_ability" => ability}  ->
+|> Enum.each( fn %{ "name" => name, "hidden_ability" => ability}  ->
+  # IO.inspect(x)
+  # IO.inspect(%Ability{})
   Repo.get_by(Ability, name: ability) ||
-  Repo.insert!(%Ability{name: ability})
+  Repo.insert!(%Ability{name: name, ability: ability})
 end)
-
-# Seeds types table
-
+#
+# # Seeds types table
+#
 File.stream!("/Users/smdahlgren171/Code/Semester Two/phoenix_project/pokedex/priv/repo/dex.csv")
 |> CSV.decode(headers: true)
-|> Enum.each( fn %{ "type1" => type}  ->
+|> Enum.each( fn %{ "name" => name, "type1" => type} = x  ->
+  # IO.inspect(x)
+  # IO.inspect(%Ability{})
   Repo.get_by(Type, name: type) ||
-  Repo.insert!(%Type{name: type})
+  Repo.insert!(%Type{name: name, type: type})
 end)
-
-# Seeds pokemon table
-
+#
 File.stream!("/Users/smdahlgren171/Code/Semester Two/phoenix_project/pokedex/priv/repo/dex.csv")
 |> CSV.decode(headers: true)
-|> Enum.each( fn %{ "name" => name}  ->
-  Repo.get_by(Pokemon, name: name) ||
-  Repo.insert!(%Pokemon{name: name})
+|> Enum.each( fn %{ "name" => name, "type2" => type} = x  ->
+  # IO.inspect(x)
+  # IO.inspect(%Ability{})
+  Repo.get_by(Type, name: type) ||
+  Repo.insert!(%Type{name: name, type: type})
 end)

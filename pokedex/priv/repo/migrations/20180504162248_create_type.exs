@@ -4,6 +4,7 @@ defmodule Pokedex.Repo.Migrations.CreateType do
   def change do
     create table(:types) do
       add :name, :string, null: false
+      add :type, :string
 
       # belongs_to :pokemon
 
