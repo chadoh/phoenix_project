@@ -1,0 +1,22 @@
+<h2>Listing pokemon</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for pokemon <- @pokemon do %>
+    <tr>
+      <td><%= pokemon.name %></b> (<%= pokemon.id %>)</td>
+
+      <td class="text-right">
+        <%= link "Show", to: pokemon_path(@conn, :show, pokemon), class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>

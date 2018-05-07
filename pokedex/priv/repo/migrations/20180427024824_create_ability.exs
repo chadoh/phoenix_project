@@ -3,7 +3,7 @@ defmodule Pokedex.Repo.Migrations.CreateAbility do
 
   def change do
     create table(:abilities) do
-      add :name, :string
+      add :name, :string, null: false
 
       # belongs_to :pokemon
 

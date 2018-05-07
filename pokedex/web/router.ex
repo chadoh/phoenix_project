@@ -19,7 +19,8 @@ defmodule Pokedex.Router do
     get "/", PageController, :index
     resources "/users", UserController, only: [:index, :show, :new, :create]
     resources "/sessions", SessionController, only: [:new, :create, :delete]
-  end
+    resources "/pokemon", PokemonController, only: [:index, :show]
+    end
 
   # Other scopes may use custom stacks.
   # scope "/api", Pokedex do

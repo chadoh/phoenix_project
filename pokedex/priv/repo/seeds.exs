@@ -15,15 +15,6 @@ alias Pokedex.Repo
 alias Pokedex.Type
 alias Pokedex.Pokemon
 
-# defmodule Pokedex.Seeds do
-
-  # def store(row) do
-  #   changeset = Ability.changeset(%Ability{}, row)
-  #   # |> IO.inspect
-  #   Repo.insert!(changeset)
-  # end
-
-
 # Seeds abilities table
 
 File.stream!("/Users/smdahlgren171/Code/Semester Two/phoenix_project/pokedex/priv/repo/dex.csv")
@@ -64,17 +55,3 @@ File.stream!("/Users/smdahlgren171/Code/Semester Two/phoenix_project/pokedex/pri
   Repo.get_by(Pokemon, name: name) ||
   Repo.insert!(%Pokemon{name: name})
 end)
-
-# create table(:pokemon_full) do
-#   add :name, :string
-#   add :type1, :string
-#   add :type2, :string
-#   add :ability1, :string
-#   add :ability2, :string
-#   add :hidden_ability, :string
-#
-#   # has_many :abilities
-#   # has_many :types
-#
-#   timestamps()
-# end

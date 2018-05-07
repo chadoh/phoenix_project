@@ -10,10 +10,10 @@ defmodule Pokedex.SessionController do
     case Pokedex.Auth.login_by_username_and_pass(conn, user, pass, repo:
     Repo) do
       {:ok, conn} -> conn
-      |> put_flash(:info, "Welcome back!")
-      |> redirect(to: page_path(conn, :index))
+      |> put_flash(:info, "Way more than 150 to see here!")
+      |> redirect(to: pokemon_path(conn, :index))
       {:error, _reason, conn} -> conn
-      |> put_flash(:error, "Invalid username/password combination")
+      |> put_flash(:error, "Ayyyyyyooooo, not gonna fly here homie!")
       |> render("new.html")
     end
   end

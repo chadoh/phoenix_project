@@ -1,0 +1,6 @@
+<h2>Edit pokemon</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: pokemon_path(@conn, :update, @pokemon) %>
+
+<%= link "Back", to: pokemon_path(@conn, :index) %>
