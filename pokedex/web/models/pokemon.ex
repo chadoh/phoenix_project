@@ -1,5 +1,7 @@
 defmodule Pokedex.Pokemon do
   use Pokedex.Web, :model
+  alias Pokedex.Ability
+  alias Pokedex.Type
 
   schema "pokemon" do
     field :name, :string
@@ -9,8 +11,8 @@ defmodule Pokedex.Pokemon do
     field :ability2, :string
     field :hidden_ability, :string
 
-    # has_many :abilities
-    # has_many :types
+    has_many :abilities, Pokedex.Ability
+    has_many :types, Pokedex.Type
 
     timestamps()
   end

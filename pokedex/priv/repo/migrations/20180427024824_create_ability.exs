@@ -1,12 +1,13 @@
 defmodule Pokedex.Repo.Migrations.CreateAbility do
   use Ecto.Migration
+  alias Pokedex.Pokemon
 
   def change do
     create table(:abilities) do
       add :name, :string, null: false
       add :ability, :string
 
-      # belongs_to :pokemon
+      has_many :pokemon, Pokedex.Pokemon
 
       timestamps()
     end
