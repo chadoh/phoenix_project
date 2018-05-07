@@ -19,8 +19,6 @@ alias Pokedex.Type
 File.stream!("/Users/smdahlgren171/Code/Semester Two/phoenix_project/pokedex/priv/repo/dex.csv")
 |> CSV.decode(headers: true)
 |> Enum.each( fn %{ "name" => name, "ability1" => ability}  ->
-  # IO.inspect(x)
-  # IO.inspect(%Ability{})
   Repo.get_by(Ability, name: ability) ||
   Repo.insert!(%Ability{name: name, ability: ability})
 end)
@@ -28,8 +26,6 @@ end)
 File.stream!("/Users/smdahlgren171/Code/Semester Two/phoenix_project/pokedex/priv/repo/dex.csv")
 |> CSV.decode(headers: true)
 |> Enum.each( fn %{ "name" => name, "ability2" => ability}  ->
-  # IO.inspect(x)
-  # IO.inspect(%Ability{})
   Repo.get_by(Ability, name: ability) ||
   Repo.insert!(%Ability{name: name, ability: ability})
 end)
@@ -37,8 +33,6 @@ end)
 File.stream!("/Users/smdahlgren171/Code/Semester Two/phoenix_project/pokedex/priv/repo/dex.csv")
 |> CSV.decode(headers: true)
 |> Enum.each( fn %{ "name" => name, "hidden_ability" => ability}  ->
-  # IO.inspect(x)
-  # IO.inspect(%Ability{})
   Repo.get_by(Ability, name: ability) ||
   Repo.insert!(%Ability{name: name, ability: ability})
 end)
@@ -48,8 +42,6 @@ end)
 File.stream!("/Users/smdahlgren171/Code/Semester Two/phoenix_project/pokedex/priv/repo/dex.csv")
 |> CSV.decode(headers: true)
 |> Enum.each( fn %{ "name" => name, "type1" => type} = x  ->
-  # IO.inspect(x)
-  # IO.inspect(%Ability{})
   Repo.get_by(Type, name: type) ||
   Repo.insert!(%Type{name: name, type: type})
 end)
@@ -57,8 +49,6 @@ end)
 File.stream!("/Users/smdahlgren171/Code/Semester Two/phoenix_project/pokedex/priv/repo/dex.csv")
 |> CSV.decode(headers: true)
 |> Enum.each( fn %{ "name" => name, "type2" => type} = x  ->
-  # IO.inspect(x)
-  # IO.inspect(%Ability{})
   Repo.get_by(Type, name: type) ||
   Repo.insert!(%Type{name: name, type: type})
 end)

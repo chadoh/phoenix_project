@@ -13,7 +13,7 @@ defmodule Pokedex.SessionController do
       conn
       |> put_flash(:info, "Way more than 150 to see here!")
       |> redirect(to: pokemon_path(conn, :index))
-      {:error, _reason, conn} -> 
+      {:error, _reason, conn} ->
       conn
       |> put_flash(:error, "Ayyyyyyooooo, not gonna fly here homie!")
       |> render("new.html")
