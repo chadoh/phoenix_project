@@ -5,6 +5,11 @@
   <li>
     <strong>Name:</strong>
     <%= @pokemon.name %>
+    <%= @pokemon.type1 %>
+    <%= @pokemon.type2 %>
+    <%= @pokemon.ability1 %>
+    <%= @pokemon.ability2 %>
+    <%= @pokemon.hidden_ability %>
   </li>
 
 </ul>
