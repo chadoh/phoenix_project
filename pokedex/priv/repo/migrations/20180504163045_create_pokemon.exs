@@ -13,8 +13,8 @@ defmodule Pokedex.Repo.Migrations.CreatePokemon do
       add :ability2, :string
       add :hidden_ability, :string
 
-      has_many :abilities, Pokedex.Ability
-      has_many :types, Pokedex.Type
+      # has_many :abilities, Pokedex.Ability
+      # has_many :types, Pokedex.Type
 
       timestamps()
     end

@@ -7,7 +7,7 @@ defmodule Pokedex.Repo.Migrations.CreateType do
       add :name, :string, null: false
       add :type, :string
 
-      has_many :pokemon, Pokedex.Pokemon
+      # has_many :pokemon, Pokedex.Pokemon
 
       timestamps()
     end

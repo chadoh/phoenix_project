@@ -13,6 +13,7 @@
 alias Pokedex.Ability
 alias Pokedex.Repo
 alias Pokedex.Type
+alias Pokedex.Pokemon
 
 # Seeds abilities table
 
@@ -51,4 +52,14 @@ File.stream!("/Users/smdahlgren171/Code/Semester Two/phoenix_project/pokedex/pri
 |> Enum.each( fn %{ "name" => name, "type2" => type} = x  ->
   Repo.get_by(Type, name: type) ||
   Repo.insert!(%Type{name: name, type: type})
+end)
+#
+# Seeds pokemon table
+#
+File.stream!("/Users/smdahlgren171/Code/Semester Two/phoenix_project/pokedex/priv/repo/dex.csv")
+|> CSV.decode(headers: true)
+|> Enum.each( fn %{ "name" => name, "type1" => type1, "type2" => type2, "ability1" => ability1, "ability2" => ability2, "hidden_ability" => hidden} = x  ->
+  # IO.inspect(x)
+  Repo.get_by(Pokemon, name: name) ||
+  Repo.insert!(%Pokemon{name: name, type1: type1, type2: type2, ability1: ability1, ability2: ability2, hidden_ability: hidden})
 end)
