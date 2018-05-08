@@ -1,10 +1,11 @@
 defmodule Pokedex.Ability do
   use Pokedex.Web, :model
-  # alias Pokedex.Pokemon
+  alias Pokedex.Pokemon
 
   schema "abilities" do
     field :name, :string, null: false
     field :ability, :string
+    field :pokemon_id, :integer
 
     # has_many :pokemon, Pokedex.Pokemon
 

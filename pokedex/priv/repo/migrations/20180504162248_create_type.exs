@@ -6,6 +6,7 @@ defmodule Pokedex.Repo.Migrations.CreateType do
     create table(:types) do
       add :name, :string, null: false
       add :type, :string
+      add :pokemon_id, :integer
 
       # has_many :pokemon, Pokedex.Pokemon
 

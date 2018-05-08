@@ -12,6 +12,8 @@ defmodule Pokedex.Repo.Migrations.CreatePokemon do
       add :ability1, :string
       add :ability2, :string
       add :hidden_ability, :string
+      add :type_id, :integer
+      add :ability_id, :integer
 
       # has_many :abilities, Pokedex.Ability
       # has_many :types, Pokedex.Type

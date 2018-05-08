@@ -1,10 +1,11 @@
 defmodule Pokedex.Type do
   use Pokedex.Web, :model
-  # alias Pokedex.Pokemon
+  alias Pokedex.Pokemon
 
   schema "types" do
     field :name, :string, null: false
     field :type, :string
+    field :pokemon_id, :integer
 
     # has_many :pokemon, Pokedex.Pokemon
 

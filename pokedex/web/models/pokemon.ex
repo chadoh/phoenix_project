@@ -1,7 +1,7 @@
 defmodule Pokedex.Pokemon do
   use Pokedex.Web, :model
-  # alias Pokedex.Ability
-  # alias Pokedex.Type
+  alias Pokedex.Ability
+  alias Pokedex.Type
 
   schema "pokemon" do
     field :name, :string

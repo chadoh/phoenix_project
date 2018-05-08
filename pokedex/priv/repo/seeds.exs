@@ -42,14 +42,14 @@ end)
 #
 File.stream!("/Users/smdahlgren171/Code/Semester Two/phoenix_project/pokedex/priv/repo/dex.csv")
 |> CSV.decode(headers: true)
-|> Enum.each( fn %{ "name" => name, "type1" => type} = x  ->
+|> Enum.each( fn %{ "name" => name, "type1" => type}  ->
   Repo.get_by(Type, name: type) ||
   Repo.insert!(%Type{name: name, type: type})
 end)
 #
 File.stream!("/Users/smdahlgren171/Code/Semester Two/phoenix_project/pokedex/priv/repo/dex.csv")
 |> CSV.decode(headers: true)
-|> Enum.each( fn %{ "name" => name, "type2" => type} = x  ->
+|> Enum.each( fn %{ "name" => name, "type2" => type}  ->
   Repo.get_by(Type, name: type) ||
   Repo.insert!(%Type{name: name, type: type})
 end)
@@ -58,7 +58,7 @@ end)
 #
 File.stream!("/Users/smdahlgren171/Code/Semester Two/phoenix_project/pokedex/priv/repo/dex.csv")
 |> CSV.decode(headers: true)
-|> Enum.each( fn %{ "name" => name, "type1" => type1, "type2" => type2, "ability1" => ability1, "ability2" => ability2, "hidden_ability" => hidden} = x  ->
+|> Enum.each( fn %{ "name" => name, "type1" => type1, "type2" => type2, "ability1" => ability1, "ability2" => ability2, "hidden_ability" => hidden}  ->
   # IO.inspect(x)
   Repo.get_by(Pokemon, name: name) ||
   Repo.insert!(%Pokemon{name: name, type1: type1, type2: type2, ability1: ability1, ability2: ability2, hidden_ability: hidden})
