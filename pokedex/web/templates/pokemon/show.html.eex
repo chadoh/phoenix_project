@@ -5,10 +5,25 @@
   <li>
     <strong>Name:</strong>
     <%= @pokemon.name %>
+  </li>
+  <li>
+    <strong> Type 1: </strong>
     <%= @pokemon.type1 %>
+  </li>
+    <li>
+    <strong> Type 2: </strong>
     <%= @pokemon.type2 %>
+  </li>
+    <li>
+    <strong> Ability 1: </strong>
     <%= @pokemon.ability1 %>
+  </li>
+    <li>
+    <strong> Ability 2: </strong>
     <%= @pokemon.ability2 %>
+  </li>
+    <li>
+    <strong> Hidden Ability: </strong>
     <%= @pokemon.hidden_ability %>
   </li>
 

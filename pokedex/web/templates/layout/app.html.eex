@@ -18,7 +18,7 @@
 
 </head>
 
-<body>
+<body class="">
   <div class="container">
     <div class="navbar-brand">Choadis' Phoenix-Dex</div>
     <div class="header">
@@ -34,7 +34,7 @@
     <li><%= link "Log in", to: session_path(@conn, :new) %></li>
     <% end %>
   </ol>
-  <span class="logo hidden-xs"></span>
+  <a href="/pokemon" class="logo hidden-xs"></a>
 </div>
 <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
 <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
