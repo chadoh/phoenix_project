@@ -11,8 +11,8 @@ defmodule Pokedex.Pokemon do
     field :ability2, :string
     field :hidden_ability, :string
 
-    # has_many :abilities, Pokedex.Ability
-    # has_many :types, Pokedex.Type
+    has_many :abilities, Pokedex.Ability
+    has_many :types, Pokedex.Type
 
     timestamps()
   end

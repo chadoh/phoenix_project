@@ -1,8 +1,5 @@
 defmodule Pokedex.Repo.Migrations.CreatePokemon do
   use Ecto.Migration
-  alias Pokedex.Pokemon
-  alias Pokedex.Type
-  alias Pokedex.Ability
 
   def change do
     create table(:pokemon) do

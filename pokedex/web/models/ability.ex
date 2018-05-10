@@ -7,7 +7,7 @@ defmodule Pokedex.Ability do
     field :ability, :string
     field :pokemon_id, :integer
 
-    # has_many :pokemon, Pokedex.Pokemon
+    has_many :pokemon, Pokedex.Pokemon
 
     timestamps()
   end
